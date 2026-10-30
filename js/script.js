@@ -2,7 +2,7 @@ getAll();
 
 async function getAll(){
     try {
-        const response = await fetch(`https://onepieceapi.com/api/characters`);
+        const response = await fetch("https://onepieceapi.com/api");
 
         if (!response.ok) {
             throw new Error(error);

@@ -22,15 +22,25 @@ async function getAll(){
             const imgLi = document.createElement("li");
             const nameLi = document.createElement("li");
             const bountyLi = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = data[index].image_url;
 
-            const img = data[index].imagine_url;
             const nameOf = data[index].name.en;
-            const bounty = data[index].bounties[0];
+            let bounty = data[index].bounties[0];
+
+            if (data[index].bounties.length == 0) {
+                bounty = 0;
+            }else{
+                bounty = bounty.amount;
+                 const check = document.createAttribute("input");
+                 check 
+                
+            }
             
             imgLi.append(img);
-            nameLi.append(nameOf);
-            bountyLi.append(bounty);
-            ul.append(img, nameOf, bounty);
+            nameLi.append("Name: "+nameOf);
+            bountyLi.append("Bounty: "+bounty);
+            ul.append(imgLi, " " ,nameLi, " "  ,bountyLi);
             li.append(ul);
             list.append(li);
         }

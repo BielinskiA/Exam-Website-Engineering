@@ -58,6 +58,7 @@ async function getAll(){
         }
     } catch (error) {
         console.log(error);
+        alert("Something goes wrong")
     }
 }
 
@@ -117,6 +118,7 @@ async function getChar() {
         console.log(data);
     } catch (error) {
         console.log(error);
+        alert("Something goes wrong")
     }  
 }
 

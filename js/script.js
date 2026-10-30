@@ -83,7 +83,6 @@ async function getChar() {
             const bountyLi = document.createElement("li");
             const img = document.createElement("img");
             img.src = data[index].image_url;
-
             const nameOf = data[index].name.en;
             let bounty = data[index].bounties[0];
 
@@ -151,20 +150,49 @@ function bount(bounty){
     }
 }
 
-let three = 2;
+let o = 2;
 
 function one(){
 
-    if (three%2 == 0) {
+    if (o%2 == 0) {
         const body = document.getElementById("body");
-        body.style.backgroundColor = "brown"
+        body.style.backgroundColor = "#371901"
 
-        three = 1;
+        o = 1;
     }else{
-        const img = document.getElementsByName("img");
         const body = document.getElementById("body");
         body.style.backgroundColor = "white"
-        three = 2;
+        o = 2;
     }
 }
 
+let t = 2;
+
+function two(){
+
+    if (t%2 == 0) {
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "silver"
+
+        t = 1;
+    }else{
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "white"
+        t = 2;
+    }
+}
+
+let th = 2;
+
+function three(){
+
+    if (th%2 == 0) {
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "silver"
+        th = 1;
+    }else{
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "white"
+        th = 2;
+    }
+}

@@ -151,7 +151,20 @@ function bount(bounty){
     }
 }
 
+let three = 2;
 
+function one(){
 
+    if (three%2 == 0) {
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "brown"
 
+        three = 1;
+    }else{
+        const img = document.getElementsByName("img");
+        const body = document.getElementById("body");
+        body.style.backgroundColor = "white"
+        three = 2;
+    }
+}
 

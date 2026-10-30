@@ -1,7 +1,7 @@
 let page = 1;
 let bounties = 0;
 let count = 2;
-const charWithBount = [];
+const bountiesS = []; 
 getAll();
 
 async function getAll(){
@@ -139,6 +139,7 @@ function next(){
 }
 
 function bount(bounty){
+
     if (count%2 == 0) {
         bounties += bounty;
         document.getElementById("bounty").textContent = `Bounty ${bounties}`;
@@ -149,6 +150,8 @@ function bount(bounty){
         count = 2;
     }
 }
+
+
 
 
 

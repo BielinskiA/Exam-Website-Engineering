@@ -1,0 +1,22 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#allChar{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 2px;
+}
+
+img{
+    width: 15vw;
+}
+
+#allChar li ul{
+    width: 22vw;
+    border: 2px solid black;
+    height: 60vw;
+}
+

@@ -1,7 +1,6 @@
 let page = 1;
 const bounties = 0;
 
-
 getAll();
 
 async function getAll(){
@@ -34,10 +33,20 @@ async function getAll(){
                 bounty = bounty.amount;
                 const check = document.createElement("input");
                 check.type = "checkbox";
-                check.
                 bountyLi.append(check);
                 
             }
+            ul.onclick = () => {
+                
+                const ageLi = document.createElement("li");
+                const status = document.createElement("li");
+
+                ageLi.textContent = data[index].age;
+                status.textContent = data[index].status;
+
+                ul.append(ageLi, status);
+
+            };
             imgLi.append(img);
             nameLi.append("Name: "+nameOf);
             bountyLi.append("Bounty: "+bounty);
@@ -82,7 +91,7 @@ async function getChar() {
                 bounty = bounty.amount;
                 const check = document.createElement("input");
                 check.type = "checkbox";
-
+                check.onchange = () => bount(bounty);
                 bountyLi.append(check);
                 
             }
@@ -98,6 +107,7 @@ async function getChar() {
         console.log(error);
     }  
 }
+
 function clearR(){
     page = 1;
     getAll();
@@ -115,6 +125,17 @@ function next(){
     getAll();
 }
 
+function bount(bounty){
+    let count = 0;
+    count++
+    if (!(count%2 == 0)) {
+        bounties += bounty;
+        document.getElementById("bounty").textContent = `Bounty ${bounties}`;
+    }else{
+        bounties -= bounty;
+        document.getElementById("bounty").textContent = `Bounty ${bounties}`;
+    }
+}
 
 
 

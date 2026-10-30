@@ -1,6 +1,7 @@
 let page = 1;
-const bounties = 0;
-
+let bounties = 0;
+let count = 2;
+const charWithBount = [];
 getAll();
 
 async function getAll(){
@@ -33,10 +34,11 @@ async function getAll(){
                 bounty = bounty.amount;
                 const check = document.createElement("input");
                 check.type = "checkbox";
+                check.onclick = () => bount(bounty);
                 bountyLi.append(check);
                 
             }
-            ul.onclick = () => {
+            imgLi.onclick = () => {
                 
                 const ageLi = document.createElement("li");
                 const status = document.createElement("li");
@@ -91,10 +93,21 @@ async function getChar() {
                 bounty = bounty.amount;
                 const check = document.createElement("input");
                 check.type = "checkbox";
-                check.onchange = () => bount(bounty);
+                check.onclick = () => bount(bounty);
                 bountyLi.append(check);
                 
             }
+            imgLi.onclick = () => {
+                
+                const ageLi = document.createElement("li");
+                const status = document.createElement("li");
+
+                ageLi.textContent = data[index].age;
+                status.textContent = data[index].status;
+
+                ul.append(ageLi, status);
+
+            };
             imgLi.append(img);
             nameLi.append("Name: "+nameOf);
             bountyLi.append("Bounty: "+bounty);
@@ -126,14 +139,14 @@ function next(){
 }
 
 function bount(bounty){
-    let count = 0;
-    count++
-    if (!(count%2 == 0)) {
+    if (count%2 == 0) {
         bounties += bounty;
         document.getElementById("bounty").textContent = `Bounty ${bounties}`;
+        count = 1;
     }else{
         bounties -= bounty;
         document.getElementById("bounty").textContent = `Bounty ${bounties}`;
+        count = 2;
     }
 }
 
